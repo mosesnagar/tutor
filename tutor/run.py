@@ -1,7 +1,13 @@
-from flask import Flask  
+from tutor import app, db
+from tutor.models import *
 
-app = Flask(__name__) 
+# create all table on DB
+db.create_all()
 
-from routing import *
 
-app.run(debug = True)
+# import routes
+from tutor.routing import *
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
