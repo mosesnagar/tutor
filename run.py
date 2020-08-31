@@ -1,5 +1,5 @@
 from tutor import app, db
-from tutor.models import *
+from tutor.models import Model
 
 
 # create all table on DB
@@ -7,7 +7,7 @@ db.create_all()
 
 
 # import routes
-from tutor.routing import *
+from tutor.routes import hello, model
 
 
 if __name__ == "__main__":
