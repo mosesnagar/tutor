@@ -13,4 +13,3 @@ def createNewModel(modelName):
     db.session.add(model)
     db.session.commit()
     return jsonify({'id' : model.id, 'status' : 200})
-    
