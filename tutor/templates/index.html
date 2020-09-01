@@ -1,8 +1,15 @@
-<html>
-    <head>
-        <title>Tutor</title>
-    </head>
-    <body>
-        <h1>Hello world!</h1>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block title %} Tutor {% endblock %}
+
+{% block content %}
+     
+<div class="jumbotron" style="opacity: 0.8; margin-top: 75px">
+    <h1 class="display-4" style="font-weight: bold;"><strong>Tutor - Sharing Towards Excellence</strong></h1>
+    <p style="font-size: 25px; margin-top: 25px">Tutor is an open-source platform for students, made by students, to make their studies more efficient, easy and enjoyable.
+        Using Tutor you get helpful sources about various courses,
+        like videos, summaries, links, and have all the information you need to excel in every course. 
+<br>You can also share with others the materials that helped you succeed in your studies.</p>
+</div>
+ 
+
+{% endblock %}
