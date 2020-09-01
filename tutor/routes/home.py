@@ -1,4 +1,7 @@
-from flask import render_template
- 
-def home():
-    return render_template('index.html')
+from .. import app
+from ..controllers import home
+
+
+@app.route('/')
+def index_route():
+    return home.home()

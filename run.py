@@ -1,7 +1,7 @@
 from tutor import app, db
 
 
-from tutor.routing import *
+from tutor.routes import home
 
 
 if __name__ == "__main__":
