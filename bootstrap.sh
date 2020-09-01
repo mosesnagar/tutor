@@ -2,7 +2,7 @@
 
 
 echo "installing python and postgres"
-apt update && apt upgrade -y
+apt update
 apt install -y python3.7 python3-pip postgresql postgresql-contrib
 
 
