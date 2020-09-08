@@ -2,9 +2,9 @@ name: Tutor_CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, Lint ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, Lint ]
 
 jobs:
   build:
