@@ -19,8 +19,6 @@ jobs:
         export PIPENV_VENV_IN_PROJECT="enabled"
         export VIRTUALENV_ALWAYS_COPY=1
         pipenv sync --dev
-        sudo -u postgres createdb tutor
-        sudo -u postgres psql -c "ALTER ROLE postgres WITH PASSWORD 'tutor';"
     - name: Lint with flake8
       run: |
         flake8 . --count --select=W291,W292,W293,E3,E9 --show-source --statistics
