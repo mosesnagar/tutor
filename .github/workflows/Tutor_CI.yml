@@ -16,8 +16,6 @@ jobs:
     - name: Execute bootstrap.sh to install dependencies(flake8 and pytest included)
       run: |
         pip3 install pipenv
-        export PIPENV_VENV_IN_PROJECT="enabled"
-        export VIRTUALENV_ALWAYS_COPY=1
         pipenv sync --dev
     - name: Lint with flake8
       run: |
