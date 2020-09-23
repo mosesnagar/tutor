@@ -2,8 +2,8 @@
 
 
 echo "installing python and postgres"
-apt update
-apt install -y python3.7 python3-pip python3.7-dev postgresql postgresql-contrib postgresql-common postgresql-client libpq-dev
+sudo apt update
+sudo apt install -y python3.7 python3-pip python3.7-dev postgresql postgresql-contrib postgresql-common postgresql-client libpq-dev
 
 
 echo "installing dependencies"
