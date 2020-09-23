@@ -12,7 +12,6 @@ jobs:
         image: postgres:11
         env:
           POSTGRES_PASSWORD: tutor
-          POSTGRES_DATABASE: tutor
         ports:
         - 5432:5432
         # needed because the postgres container does not provide a healthcheck
