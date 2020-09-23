@@ -12,6 +12,8 @@ jobs:
         image: postgres:11
         env:
           POSTGRES_PASSWORD: tutor
+          POSTGRES_DB: tutor        
+          POSTGRES_USER: postgres
         ports:
         - 5432:5432
         # needed because the postgres container does not provide a healthcheck
@@ -24,8 +26,6 @@ jobs:
         python-version: 3.7
     - name: Install dependencies(flake8 and pytest included)
       run: |
-        sudo apt update
-        sudo apt install postgresql postgresql-contrib postgresql-common postgresql-client
         pip3 install pipenv
         pipenv sync --dev
     - name: Lint with flake8
