@@ -1,5 +1,5 @@
 from .. import db
-from flask import Flask, Response, render_template, request, redirect, url_for
+from flask import render_template, redirect, url_for
 from .forms import resourceForm
 from ..models.course import Resource
 
