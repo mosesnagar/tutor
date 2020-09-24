@@ -43,6 +43,8 @@ pipenv run python3 run.py db init
 pipenv run python3 run.py db migrate
 pipenv run python3 run.py db upgrade
 
-
-echo "run tutor app"
-nohup pipenv run flask run -h 0.0.0.0 -p 5000
+if [ ! "$CI" ] 
+then
+  echo "run tutor app"
+  nohup pipenv run flask run -h 0.0.0.0 -p 5000
+fi
