@@ -18,6 +18,10 @@ fi
 
 pipenv sync --dev
 
+if [ "$CI" ]
+then
+  sudo systemctl start postgresql
+fi
 
 echo "initializing new DB"
 sudo -u postgres createdb tutor
