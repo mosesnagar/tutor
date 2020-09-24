@@ -1,5 +1,5 @@
 from tutor import app
-from tutor.routes import home, course
+from tutor.routes import home, course # noqa
 
 
 def test_flash_message():
