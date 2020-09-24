@@ -15,13 +15,12 @@ jobs:
         python-version: 3.7
     - name: Install dependencies(flake8 and pytest included)
       run: |
-        chmod +x ./bootstrap.sh
         ./bootstrap.sh
     - name: Lint with flake8
       run: |
         pip install flake8
         flake8 . --count --select=W292,W293,E3,E9 --show-source --statistics
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        flake8 . --count --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
         pipenv run python3 -m pytest
