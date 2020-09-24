@@ -15,7 +15,8 @@ jobs:
         python-version: 3.7
     - name: Install dependencies(flake8 and pytest included)
       run: |
-        sudo bash ./bootstrap.sh
+        chmod +x ./bootstrap.sh
+        ./bootstrap.sh
     - name: Lint with flake8
       run: |
         pip install flake8
