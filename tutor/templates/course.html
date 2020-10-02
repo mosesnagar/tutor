@@ -10,11 +10,12 @@
             {% for resource in resources %}
                 <div class="card" style="margin: 20px">
                     <div class="card-body">
-                        <h5 class="card-title">{{resource.title}}</h5>
+                        <h5 class="card-title">
+                            <a href="{{resource.link}}" class="card-link">{{resource.title}}</a>
+                        </h5>
                         <p class="card-text">
                             {{resource.content}}
                         </p>
-                        <a href="{{resource.link}}" class="card-link">Click here</a>
                     </div>
                 </div>
               {% endfor %}
