@@ -1,9 +1,7 @@
-from tutor import app
 from tutor.routes import home, course  # noqa
 
 
-def test_flash_message():
+def test_flash_message(client):
     # check flash message
-    c = app.test_client()
-    response = c.get('/flash')
+    response = client.get('/flash')
     assert b'Test message' in response.data

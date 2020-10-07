@@ -1,5 +1,5 @@
 from .. import app
-from ..controllers import home, register, login
+from ..controllers import home, register, login, logout
 from flask import flash
 
 
@@ -23,3 +23,8 @@ def login_route():
 def flash_route():
     flash('Test message', 'success')
     return home.home()
+
+
+@app.route("/logout")
+def logout_route():
+    return logout.logout()

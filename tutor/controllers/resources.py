@@ -5,7 +5,7 @@ from .forms.resource_form import ResourceForm
 
 
 def newResource(id):
-    form = resourceForm()
+    form = ResourceForm()
     if form.validate_on_submit():
         resource = Resource(title=form.title.data,
                             content=form.content.data, link=form.link.data, course_id=id)
