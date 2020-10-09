@@ -40,6 +40,7 @@ That way GET routes its for representing a view to the user, and POST routes its
 **Views** - we will add new views into 'tutor/templates' folder, one file for a view. We will use a layout, `templates/base.html` as a base for all our templates. 
 
 **Controllers** - we will add controllers into 'tutor/controllers' folder, one file for a controller. When helper controllers are needed, write them on the specific controller. Keep controllers short and doing one thing, use helper functions to achieve that.
+    -**Forms** - we will add split forms for different DB classes, one form file for a class.
 
 **Routing** - we will add new routes into 'tutor/routes' folder, one file for a route. After that, we need to import the route on `run.py` file, using `from tutor.routes mport %YOUR_ROUTE_FILE_NAME%`.
 
