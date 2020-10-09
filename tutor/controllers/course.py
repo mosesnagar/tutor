@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, flash
 from ..models.course import Course
-from .forms import AddCourse
 from .. import db
+from .forms.add_course_form import AddCourse
 from flask_login import current_user
 
 

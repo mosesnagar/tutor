@@ -1,5 +1,5 @@
 from flask import render_template, redirect, url_for, flash
-from .forms import RegistrationForm
+from .forms.registration_form import RegistrationForm
 from ..models.users import Users
 from .. import db
 from flask_login import current_user
