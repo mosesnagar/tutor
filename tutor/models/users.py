@@ -3,7 +3,7 @@ from flask_login import UserMixin
 
 
 if __name__ == "__main__":
-    from ..models.course import Course
+    from ..models.course import Course # noqa
 
 
 @login_manager.user_loader
@@ -13,9 +13,9 @@ def load_user(user_id):
 
 # Add favorites tables, to handle many-to-many relationship
 favorites = db.Table('favorites',
-                          db.Column('user_id', db.Integer,
-                                    db.ForeignKey('users.id')),
-                          db.Column('course_id', db.Integer, db.ForeignKey('course.id')))
+                     db.Column('user_id', db.Integer,
+                               db.ForeignKey('users.id')),
+                     db.Column('course_id', db.Integer, db.ForeignKey('course.id')))
 
 
 class Users(db.Model, UserMixin):
@@ -25,9 +25,9 @@ class Users(db.Model, UserMixin):
     username = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), nullable=False, unique=True)
     password = db.Column(db.String(60), nullable=False)
-    
+
     favorites = db.relationship("Course", secondary=favorites)
-    
+
     def save(self):
         db.session.add(self)
         db.session.commit()
@@ -35,7 +35,7 @@ class Users(db.Model, UserMixin):
     def addFavorite(self, course):
         self.favorites.append(course)
         db.session.commit()
-        
+
     def removeAllFavorites(self):
         self.favorites = []
         db.session.commit()
