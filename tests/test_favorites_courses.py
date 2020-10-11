@@ -1,15 +1,14 @@
-from tutor import db
-from tutor.models.users import Users
 from tutor.models.course import Course
+from user_functions import search_user_name, create_test_user
 
 
 def test_fav(client):
     # create new user
-    u = Users(username='pypy', email='email@email.com', password='pass')
-    u.save()
+    create_test_user(
+        username='pypy', email='email@email.com', password='pass')
 
     # check that user exists and has no favorites
-    user = Users.query.filter_by(username='pypy').first()
+    user = search_user_name('pypy')
     assert [] == user.favorites
 
     # create new course and add it to the user's favorites
@@ -17,11 +16,5 @@ def test_fav(client):
     user.addFavorite(c)
 
     # check the course added to user favorites
-    same_user = Users.query.filter_by(username='pypy').first()
+    same_user = search_user_name('pypy')
     assert c == same_user.favorites[0]
-
-    # clean up db
-    same_user.removeAllFavorites()
-    db.session.delete(c)
-    db.session.delete(same_user)
-    db.session.commit()
